@@ -3,72 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memories</title>
+    <title>Beautiful Messages for You</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             color: #333;
-            text-align: center;
-            padding: 20px;
         }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
         h1 {
             color: #ff6347;
+            margin-bottom: 30px;
+            font-size: 2.5em;
         }
-        .message-section {
-            background-color: #ffffff;
-            margin: 20px auto;
-            padding: 15px;
+
+        .message-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            background-color: #ff6347;
+            color: white;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .message-button:hover {
+            background-color: #e94e77;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             width: 80%;
             max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-        details {
-            margin: 10px 0;
-        }
-        summary {
+
+        /* Close Button */
+        .close {
+            color: #aaa;
+            font-size: 28px;
             font-weight: bold;
-            font-size: 18px;
+            position: absolute;
+            top: 5px;
+            right: 15px;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
             cursor: pointer;
-            color: #ff6347;
         }
-        summary:hover {
-            color: #e94e77;
-        }
-        p {
-            color: #555;
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
-    <h1>Forever</h1>
-    <div class="message-section">
-        <details>
-            <summary>Yar I'm feeling like I want to say something to u but i don't know wt it is🤷🏻‍♀️😁 ,I'm so obsessed with u that I can't imagine loosing u yar😕🥺,I want to see u and wants to talk with u everyday ,everytime 🥹when I will see u na my mood becomes sooo good🥰, u r my everything yarr , u really makes me happy,  confident and so on....😁, and that's y I LOVED U 😌🫠🥰
-LOVE YOU SO SO SO SO SO SO SO SO SO SO MUCH MUDDUU.................🫠😌😁♥️😘😍🥹❤️😍🤗</summary>
-            <p>Your first beautiful message goes here!</p>
-        </details>
-        <details>
-            <summary>Hmm u said yesterday na that hw I fell in love with u 😂🫠 I don't remember day and all ok😂 but I saw u seeing me  one day then I started to seeing u when I will see na u were seeing me only like that only I fell😂🤣 but one day I was thinking that I want to cm in front of suddenly and u also have to cm like that and it happened that day only and I remembered that day u were wearing maroon shirt🫠😁 but I didn't feel that much attractive on that tym but when I started to talk with u na I was like yarrr🫠🫠🫠😍  I wanted to tell that I like u but I don't had that much guts to say but in last u only said🫠😌 I can do everything for u yar , now u became my drugs u know😌 , I'm feeling really bad that we can't talk,can't do eye contact and can't go together but y I'm silent coz we will be together in future na that we can talk, see ,hug so on... 😌🫠 and ur childhood pic na u r really really really sooo cuteeee...😍♥️ 
+    <div class="container">
+        <h1>Beautiful Messages for You</h1>
+
+        <!-- Buttons that will trigger the modals -->
+        <button class="message-button" id="message1-btn">Message 1</button>
+        <button class="message-button" id="message2-btn">Message 2</button>
+        <button class="message-button" id="message3-btn">Message 3</button>
+
+        <!-- The Modal -->
+        <div id="message1-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close1">&times;</span>
+                <p>Yar I'm feeling like I want to say something to u but i don't know wt it is🤷🏻‍♀️😁 ,I'm so obsessed with u that I can't imagine loosing u yar😕🥺,I want to see u and wants to talk with u everyday ,everytime 🥹when I will see u na my mood becomes sooo good🥰, u r my everything yarr , u really makes me happy,  confident and so on....😁, and that's y I LOVED U 😌🫠🥰
+LOVE YOU SO SO SO SO SO SO SO SO SO SO MUCH MUDDUU.................🫠😌😁♥️😘😍🥹❤️😍🤗</p>
+            </div>
+        </div>
+
+        <div id="message2-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close2">&times;</span>
+                <p>Hmm u said yesterday na that hw I fell in love with u 😂🫠 I don't remember day and all ok😂 but I saw u seeing me  one day then I started to seeing u when I will see na u were seeing me only like that only I fell😂🤣 but one day I was thinking that I want to cm in front of suddenly and u also have to cm like that and it happened that day only and I remembered that day u were wearing maroon shirt🫠😁 but I didn't feel that much attractive on that tym but when I started to talk with u na I was like yarrr🫠🫠🫠😍  I wanted to tell that I like u but I don't had that much guts to say but in last u only said🫠😌 I can do everything for u yar , now u became my drugs u know😌 , I'm feeling really bad that we can't talk,can't do eye contact and can't go together but y I'm silent coz we will be together in future na that we can talk, see ,hug so on... 😌🫠 and ur childhood pic na u r really really really sooo cuteeee...😍♥️ 
 Ur character - Is like gem 💎 
 Ur physic - can't explain 🫠😫😍
 Ur looks - died(especially ur smile yar I'm obsessed with that smile😌😍)🫠🫠🫠🫠🫠🫠🫠
 So overall u r my type that's it 😂😁
 And tell what should I explain is there anything to explain more😂
 Yar I can't explain in words it's all in my heart 🫠 
-Yar I LOVE YOU SO SO SO MUCH MUDDUU 😍😌😁♥️😘🫠🥹</summary>
-            <p>Your second beautiful message goes here!</p>
-        </details>
-        <details>
-            <summary>Yar mudduu I don't want to disturb u by calling, hw can i disturb u when u r sleeping peacefully yarr🫠, yar I'm missing u soo much u know 🥹 , see don't think I will fall for other cute guys in our clg like that and all if I'm loving u means u r my everything ok😌 don't think I will leave u , I'm there with u always yarr🫠♥️ u don't know how much cute u r 😌😁 and  that ur smile would kill me🫠🫠 yar I was not observed ur smile in 1st r 2nd sem if I observed u that much na I would have fell for u only😌😘🫠 u really don't know how many tyms I look at u in the cls , I will be watching u only u know 🫠 u r such a gem yar ,I can understand ur situation that u have to study harder and want to get a job and have so many plans to do if u r studying na don't msg me ok u will get distracted u can say to me openly that u have to study I won't feel bad for my mudduu ok🫠😌😁 coz I know how much u love me and I will never ever think that u will lev me ok🤞🏻😌 I really trust u and love u and I care abt u 🫠 I never saw a guy that this much obsessed with me yar 😁😘 I'm really missing our hugs and kiss🥹 I really really really wanted to hug u , soo badly...😫
+Yar I LOVE YOU SO SO SO MUCH MUDDUU 😍😌😁♥️😘🫠🥹.</p>
+            </div>
+        </div>
+
+        <div id="message3-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close3">&times;</span>
+                <p>Yar mudduu I don't want to disturb u by calling, hw can i disturb u when u r sleeping peacefully yarr🫠, yar I'm missing u soo much u know 🥹 , see don't think I will fall for other cute guys in our clg like that and all if I'm loving u means u r my everything ok😌 don't think I will leave u , I'm there with u always yarr🫠♥️ u don't know how much cute u r 😌😁 and  that ur smile would kill me🫠🫠 yar I was not observed ur smile in 1st r 2nd sem if I observed u that much na I would have fell for u only😌😘🫠 u really don't know how many tyms I look at u in the cls , I will be watching u only u know 🫠 u r such a gem yar ,I can understand ur situation that u have to study harder and want to get a job and have so many plans to do if u r studying na don't msg me ok u will get distracted u can say to me openly that u have to study I won't feel bad for my mudduu ok🫠😌😁 coz I know how much u love me and I will never ever think that u will lev me ok🤞🏻😌 I really trust u and love u and I care abt u 🫠 I never saw a guy that this much obsessed with me yar 😁😘 I'm really missing our hugs and kiss🥹 I really really really wanted to hug u , soo badly...😫
 U asked na one day wt should we keep our kids name😂 hmm I got one name for a girl ok it's SANYA coz Sa is urs first 2 letters and Nya is my last 3 letters🫠🫠 I know u will feel like little weird but u only asked na that's y i gave the name😂😂 and I didn't get for a boy, but I will think🤔😂 yarrr I'm really missing u a lot..........😫 I'm feeling like I have to talk to u but I can't🥺  I don't know wt to talk but want to be with u🫠 yar I'm really tired of my frnds u know hw much love I gave to them but they will give pain only I don't know y and I went to spoorthi and I asked sry u know I said that yar don't make me a enemy we can be a frnds ok I'm sry like that and she said hey no lev I don't have any issues with u and there problem solved see I don't want to make them bad but they r trying to make me bad and they will act like ntg happend they think I'm stone r something 😕 sometimes na I feel really sad but when I think abt u na then my mind will become relaxed coz u r with me na to share everything 🫠 I'm really happy for that one reason otherwise na really I would have been in depression 🤷🏻‍♀️ sorry to say this ok, u said na I want to say everything that's y I'm saying muddu🫠 u know I have a huge crush on one guy and u know he is studying BCA only and he is 2 years older than me  and his name is SACHIN🫠🫠😁😘 yar I'm so obsessed with u that I will talk like weirdo only, that much obsessed 😂🫠😌 my mind is telling to call u but my heart is saying that let him sleep don't want to disturb ur sleep like that🫠🥹 and when u go to home na then only u say to ur maa ok don't take a risk by saying in the phone only they feel bad abt u and I don't want them to be think like that ok😌I can wait for that I don't have any urgent to tell that ok u can take ur own tym and say to them ok muddu🫠
 Good morning muddu 😘😌
 ♥️LOVE YOU FOREVER MY MUDDUU ♥️
-🫠😌😘🥹🤞🏻😫♥️😍🥰🤗😘</summary>
-            <p>Your third beautiful message goes here!</p>
-        </details>
-        <!-- Add more details sections for additional messages -->
+🫠😌😘🥹🤞🏻😫♥️😍🥰🤗😘</p>
+            </div>
+        </div>
+
+        <footer>
+            Created with ❤️ for you.
+        </footer>
     </div>
+
+    <script>
+        // Get modal elements
+        const modal1 = document.getElementById('message1-modal');
+        const modal2 = document.getElementById('message2-modal');
+        const modal3 = document.getElementById('message3-modal');
+
+        // Get buttons that open the modals
+        const btn1 = document.getElementById('message1-btn');
+        const btn2 = document.getElementById('message2-btn');
+        const btn3 = document.getElementById('message3-btn');
+
+        // Get the <span> elements that close the modals
+        const close1 = document.getElementById('close1');
+        const close2 = document.getElementById('close2');
+        const close3 = document.getElementById('close3');
+
+        // When the user clicks the button, open the modal
+        btn1.onclick = function() {
+            modal1.style.display = "block";
+        }
+
+        btn2.onclick = function() {
+            modal2.style.display = "block";
+        }
+
+        btn3.onclick = function() {
+            modal3.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        close1.onclick = function() {
+            modal1.style.display = "none";
+        }
+
+        close2.onclick = function() {
+            modal2.style.display = "none";
+        }
+
+        close3.onclick = function() {
+            modal3.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            } else if (event.target == modal2) {
+                modal2.style.display = "none";
+            } else if (event.target == modal3) {
+                modal3.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
+
